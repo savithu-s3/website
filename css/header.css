@@ -2,7 +2,7 @@
 	width: 100%;
 	height: 50px;
 	top: 0;
-	background: linear-gradient(135deg, #000000, #000000, #000000, #000000, #20012c, #7302a0);
+	background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff, #ffaeae, #ff8282, #ff3434, #ff1919, #ff0000);
 	position: fixed;
 	box-shadow: 0 0 20px rgba(59, 59, 59, 0.616);
 	overflow: hidden;
@@ -30,15 +30,16 @@
 
 .header_item {
 	float: right;
-	color: white;
+	color: rgb(7, 0, 48);
 	margin: 17px;
 	font-size: larger;
-	font-weight: 600;
+	font-weight: 400;
 	text-decoration: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 #header_items {
@@ -50,5 +51,5 @@
 
 .header_item:hover {
 	float: right;
-	color: rgb(73, 167, 255);
+	color: rgb(255, 255, 255);
 }
