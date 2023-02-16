@@ -1,0 +1,179 @@
+body {
+	background: linear-gradient(270deg, #000000, #000000, #000000, #000000, #7302a0);
+  	margin: 0;
+	font-family: CaskaydiaCove Nerd Font;
+}
+
+html {
+	scroll-behavior: smooth;
+}  
+
+#progress {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	height: 60px;
+	width: 60px;
+	display: none;
+	place-items: center;
+	border-radius: 100%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	z-index: 1000;
+}
+
+#progress-value {
+  	display: block;
+  	height: calc(100% - 15px);
+  	width: calc(100% - 15px);
+  	background-color: #ffffff;
+  	border-radius: 100%;
+  	display: grid;
+  	place-items: center;
+  	font-size: 35px;
+  	color: #001a2e;
+  	-webkit-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+}
+
+.banner {
+	width: 90%;
+	height: 80vh;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 75px;
+	border-radius: 0.75rem;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(255,255,255,0.5);
+	background-color: rgba(255, 255, 255, 0.308);
+	display: flex;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+	justify-content: center;
+}
+
+#banner_title_2 {
+	color: aliceblue;
+}
+
+#banner_title {
+	font-family: "Fira Code";
+	color: white;
+	font-size: 40px;
+	font-weight: 900;
+	margin-bottom: 0%;
+}
+
+.banner_buttons {
+	display: inline;
+	border-radius: 10px;
+	border: solid 2px rgb(0, 0, 0);
+	cursor: pointer;
+	background: linear-gradient(90deg, rgb(0, 150, 62), rgb(0, 228, 38));
+	text-decoration: none;
+	padding: 0.75rem 2.75rem;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	color: #000000;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.banner_buttons:hover {
+	border: solid 3px white;
+	font-weight: 900;
+	background: linear-gradient(90deg, rgb(0, 95, 40), rgb(0, 150, 25));
+}
+
+.test {
+	height: 10000px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 38%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #16ff00;
+}
+
+::-webkit-scrollbar-track {
+    background: #001a2e;
+}
+
+::-webkit-scrollbar-button {
+    background: #001a2e;
+}
+
+/* Explode */
+#explode > .letter {
+	display: inline-block;
+	transition: transform 350ms ease;
+	color: white;
+}
+
+#explode:hover > .letter {
+	transition-duration: 800ms;
+}
+
+#explode:hover > .letter:nth-child(1) {
+	transform: translate(-80%, 60%) rotate(8deg);
+}
+
+#explode:hover > .letter:nth-child(2) {
+	transform: translate(80%, -60%) rotate(90deg);
+}
+
+#explode:hover > .letter:nth-child(3) {
+	transform: translate(-80%, 60%) rotate(-8deg);
+}
+
+#explode:hover > .letter:nth-child(4) {
+	transform: translate(80%, 60%) rotate(20deg);
+}
+
+#explode:hover > .letter:nth-child(5) {
+	transform: translate(-80%, -60%) rotate(20deg);
+}
+
+#explode:hover > .letter:nth-child(6) {
+	transform: translate(-50%, 70%) rotate(-45deg);
+}
+
+#explode:hover > .letter:nth-child(7) {
+	transform: translate(10%, 40%) rotate(2deg);
+}
+
+#explode:hover > .letter:nth-child(8) {
+	transform: translate(-10%, -60%) rotate(-1deg);
+}
+
+#explode:hover > .letter:nth-child(9) {
+	transform: translate(-80%, 60%) rotate(25deg);
+}
+/* Explode */
+
+@media screen and (max-width: 427px) {
+	#header a:not(:first-child) {display: none;}
+}
+
+@media screen and (max-width: 427px) {
+	#header.responsive {position: relative;}
+	#header.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}

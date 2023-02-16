@@ -1,0 +1,54 @@
+#header {
+	width: 100%;
+	height: 50px;
+	top: 0;
+	background: linear-gradient(135deg, #000000, #000000, #000000, #000000, #20012c, #7302a0);
+	position: fixed;
+	box-shadow: 0 0 20px rgba(59, 59, 59, 0.616);
+	overflow: hidden;
+}
+
+#header .icon {
+	display: none;
+}
+
+#header_ico {
+	max-width: 237.6146px;
+	width: 100%;
+	float: left;
+	margin-left: 0%;
+	margin-top: 0%;
+	font-size: 40px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: linear-gradient(90deg, #ff0000 0%, #ffd700 37%, #00ff00 57%, #1b85ff 82%, #800080 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.header_item {
+	float: right;
+	color: white;
+	margin: 17px;
+	font-size: larger;
+	font-weight: 600;
+	text-decoration: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-transform: uppercase;
+}
+
+#header_items {
+	height: 50px;
+	margin: 0;
+	width: fit-content;
+	float: right;
+}
+
+.header_item:hover {
+	float: right;
+	color: rgb(73, 167, 255);
+}
