@@ -81,7 +81,6 @@ function hacker_effect(hacker_eff_id, duration) {
   }
   word.addEventListener('mouseenter', init);
 }
-hacker_effect("header_ico_text", 50);
 hacker_effect("header_item_1", 30);
 hacker_effect("header_item_2", 30);
 // Hacker Effect
