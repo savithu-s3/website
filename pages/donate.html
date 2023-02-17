@@ -9,16 +9,13 @@
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/footer.css">
+	<script src="../js/script.js" defer></script>
 </head>
 <body>
-	<div id="header">
-		<!-- <a href="index.html"><img src="images/NetWSet.png" alt="NetWSet" id="header_img"></a> -->
-		<p id="header_ico">&lt;/<a href="../index.html" id="header_ico_text">NetWSet</a>></p>
-		<p id="header_items">
-			<a id="header_item_1" class="header_item" href="../index.html">HOME</a>
-			<a id="header_item_2" class="header_item" href="./projects.html">PROJECTS</a>
-		</p>
+	<div style="margin: 0; position: fixed ; height: 50px; width: 100%; top: 0;">
+		<iframe src="../widgets/header.html" frameborder="0" height="50px" width="100%"></iframe>
 	</div>
+
 	<div id="progress">
 		<span id="progress-value">&#x1F815;</span>
 	</div>
@@ -39,6 +36,9 @@
 			<a href="./about.html#top" class="footer_item">ABOUT</a>
 		</div>
  	</div>
-	 <script src="../js/script.js"></script>
+
+	 <div>
+		<iframe src="../widgets/footer.html" frameborder="0" height="210px" width="100%"></iframe>
+	</div>
 </body>
 </html>
