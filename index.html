@@ -7,11 +7,16 @@
 	<title>Savithu_s3</title>
 	<link rel="icon" type="image/x-icon" href="./images/NetWSet_favicon.png">
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/footer.css">
 	<script src="./js/script.js" defer></script>
 </head>
 <body>
-	<div style="margin: 0; position: fixed ; height: 50px; width: 100%; top: 0;">
-		<iframe src="./widgets/header.html" frameborder="0" height="50px" width="100%"></iframe>
+    <div id="header">
+        <p id="header_items">
+            <a id="header_item_1" class="header_item" href="./pages/projects.html">PROJECTS</a>
+			<a id="header_item_2" class="header_item" href="./index.html">HOME</a>
+		</p>
 	</div>
 
 	<div id="progress">
@@ -53,8 +58,20 @@
 
 	<!-- <div class="test"></div> -->
 
-	<div style="border-top-right-radius: 30px; border-top-left-radius: 30px; margin-top: 50px;">
-		<iframe src="./widgets/footer.html" frameborder="0" height="210px" width="100%" style="border-top-right-radius: 30px; border-top-left-radius: 30px;"></iframe>
-	</div>
+    <div id="footer">
+        <div id="content_1">
+            <a href="./index.html#top" class="footer_item">HOME</a>
+            <br><br>
+            <a href="./pages/projects.html#top" class="footer_item">PROJECTS</a>
+            <br><br>
+            <a href="./pages/donate.html#top" class="footer_item">DONATE</a>
+        </div>
+        <div id="content_2">
+            <a href="./pages/contact.html#top" class="footer_item">CONTACT</a>
+            <br><br>
+            <a href="./pages/about.html#top" class="footer_item">ABOUT</a>
+            <br><br>
+        </div>
+     </div>    
 </body>
 </html>
