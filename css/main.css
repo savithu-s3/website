@@ -126,16 +126,18 @@ html {
 	margin-top: 7%;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: rgba(255, 255, 255, 0.5);
-	display: grid;
-	grid-template-columns: auto 1px auto;
-	border: solid 3px white;
-	border-radius: 0.75rem;
+	/* background-color: rgba(255, 255, 255, 0.5); */
+	display: flex;
+	/* border: solid 3px white;
+	border-radius: 0.75rem; */
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 }
 
 #languages_text {
 	height: auto;
-	width: auto;
+	width: 25%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -145,23 +147,73 @@ html {
 #languages_buttons {
 	display: grid;
 	height: auto;
-	width: auto;
-	grid-template-columns: 1px auto;
-	align-content: space-around;
-	justify-content: space-around;
+	width: 30%;
+	grid-template-columns: auto auto;
+	align-content: center;
+	justify-content: center;
+	align-items: stretch;
+	justify-items: stretch;
+	row-gap: 5px;
+	column-gap: 5px;
+	margin-left: 4%;
 }
 
 .languages_button {
 	width: 150px;
 	height: 150px;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(155, 155, 155, 0.795);
 	border-radius: 1rem;
 	border: solid 3px;
 	border-color: rgba(255, 255, 255, 0.781);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
+.languages_button {
+	width: 150px;
+	height: 150px;
+	background-color: rgb(155, 155, 155,);
+	border-radius: 1rem;
+	border: solid 3px;
+	border-color: rgba(255, 255, 255, 0.781);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
 
+.languages_button:hover {
+	background-color: rgba(155, 155, 155, 0.555);
+}
 
+#divider {
+	transition: transform  250ms ease;
+}
+
+#divider:hover {
+	transform: scale(1.1);
+	transition-duration: 350ms;
+}
+
+#shake:hover {
+	animation: shake 0.8s;
+}
+
+@keyframes shake{
+	0%{
+		transform: translateX(0px) translateY(0px);
+	}
+	25%{
+		transform: translateX(25px) translateY(25px);
+	}
+	50%{
+		transform: translateX(-25px) translateY(-25px);
+	}
+	100%{
+		transform: translateX(0px) translateY(0px);
+	}
+}
 
 
 
@@ -236,16 +288,3 @@ html {
 	transform: translate(-80%, 60%) rotate(25deg);
 }
 /* Explode */
-
-@media screen and (max-width: 427px) {
-	#header a:not(:first-child) {display: none;}
-}
-
-@media screen and (max-width: 427px) {
-	#header.responsive {position: relative;}
-	#header.responsive a {
-		float: none;
-		display: block;
-		text-align: left;
-	}
-}
