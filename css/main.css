@@ -197,21 +197,21 @@ html {
 }
 
 #shake:hover {
-	animation: shake 0.8s;
+	animation: shake 700ms;
 }
 
 @keyframes shake{
 	0%{
-		transform: translateX(0px) translateY(0px);
+		transform: translateX(0px);
 	}
 	25%{
-		transform: translateX(25px) translateY(25px);
+		transform: translateX(25px);
 	}
 	50%{
-		transform: translateX(-25px) translateY(-25px);
+		transform: translateX(-25px);
 	}
 	100%{
-		transform: translateX(0px) translateY(0px);
+		transform: translateX(0px);
 	}
 }
 
