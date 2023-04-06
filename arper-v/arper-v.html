@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ARPER-V</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide">
+    </head>
+    <body>
+        <div id="main">
+            <div class="border_box">
+                <div class="buttons" id="area_button" onclick="show([area_frame, bb_area, ab_1, ab_2, ab_3, ab_4])">
+                    <img src="./Assets/area.svg" alt="Area" class="ico">
+                    <p>Area</p>
+                </div>
+            </div>
+            <div class="border_box">
+                <div class="buttons" id="perimeter_button" onclick="show([per_frame, bb_per, pb_1, pb_2, pb_3, pb_4])">
+                    <img src="./Assets/perimeter.svg" alt="Perimeter" class="ico">
+                    <p>Perimeter</p>
+                </div>
+            </div>
+            <div class="border_box">
+                <div class="buttons" id="volume_button" onclick="show([vol_frame, bb_vol, vb_1, vb_2, vb_3, vb_4, vb_5, vb_6, vb_7, vb_8, vb_9, vb_10, vb_11, vb_12])">
+                    <img src="./Assets/volume.svg" alt="Volume" class="ico">
+                    <p>Volume</p> 
+                </div>
+            </div>
+        </div>
+        <div class="frame" id="area">
+            <div class="border_box_2" id="ab_1">
+                <div class="buttons" id="ab_3" onclick="show([area_shapes, bb_area_shapes, ash_1, ash_2, ash_3, ash_4, ash_5, ash_6, ash_7, ash_8, ash_9, ash_10, ash_11, ash_12, ash_13, ash_14])">
+                    <img src="./Assets/shapes.svg" alt="Shapes" class="ico">
+                    <p>Shapes</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="ab_2">
+                <div class="buttons" id="ab_4" onclick="show([area_solids, bb_area_solids, aso_1, aso_2, aso_3, aso_4, aso_5, aso_6, aso_7, aso_8, aso_9, aso_10, aso_11, aso_12])">
+                    <img src="./Assets/solids.svg" alt="Solids" class="ico">
+                    <p>Solids</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame2" id="area_shapes">
+            <div class="border_box_3" id="ash_1">    
+                <div class="buttons_1" id="ash_2" onclick="show([ash_sq, bb_ash_sq, calc_btn_ash_sq,ic_1, ic_2])">
+                    <img src="./Assets/square.svg" alt="square" class="ico">
+                    <p>Square</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_3">
+                <div class="buttons_1" id="ash_4" onclick="show([ash_rect, bb_ash_rect, calc_btn_ash_rect, ic_3, ic_4, ic_5])">
+                    <img src="./Assets/rectangle.svg" alt="Rectangle" class="ico">
+                    <p>Rectangle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_5">    
+                <div class="buttons_1" id="ash_6" onclick="show([ash_tri, bb_ash_tri, calc_btn_ash_tri, ic_6, ic_7, ic_8])">
+                    <img src="./Assets/triangle.svg" alt="triangle" class="ico">
+                    <p>Triangle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_7">
+                <div class="buttons_1" id="ash_8" onclick="show([ash_cir, bb_ar_shapes_cir, ash_cir_1, ash_cir_2, ash_cir_3, ash_cir_4, ash_cir_5, ash_cir_6, ash_cir_7, ash_cir_8])">
+                    <img src="./Assets/circle.svg" alt="circle" class="ico" class="ico">
+                    <p>Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_9">    
+                <div class="buttons_1" id="ash_10" onclick="show([ash_oval, bb_ash_oval, calc_btn_ash_oval, ic_9, ic_10, ic_11])">
+                    <img src="./Assets/oval.svg" alt="Oval" class="ico">
+                    <p>Oval</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_11">
+                <div class="buttons_1" id="ash_12" onclick="show([ash_pent, bb_ash_pent, calc_btn_ash_pent, ic_12, ic_13])">
+                    <img src="./Assets/pentagon.svg" alt="Pentagon" class="ico">
+                    <p>Regular Pentagon</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_13">
+                <div class="buttons_1" id="ash_14" onclick="show([ash_hex, bb_ash_hex, calc_btn_ash_hex, ic_14, ic_15])">
+                    <img src="./Assets/hexagon.svg" alt="Hexagon" class="ico">
+                    <p>Regular Hexagon</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame3" id="ash_cir">
+            <div class="border_box_3" id="ash_cir_1">
+                <div class="buttons_1" id="ash_cir_2" onclick="show([ash_cir_full, bb_ash_cir_full, calc_btn_ash_cir_full, ic_16, ic_17])">
+                    <img src="./Assets/circle.svg" alt="circle" class="ico">
+                    <p>Full Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_cir_3">
+                <div class="buttons_1" id="ash_cir_4" onclick="show([ash_cir_semi, bb_ash_cir_semi, calc_btn_ash_cir_semi, ic_18, ic_19])">
+                    <img src="./Assets/semicircle.svg" alt="semicircle" class="ico">
+                    <p>Semi Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_cir_5">    
+                <div class="buttons_1" id="ash_cir_6" onclick="show([ash_cir_quarter, bb_ash_cir_quarter, calc_btn_ash_cir_quarter, ic_20, ic_21])">
+                    <img src="./Assets/quarter_circle.svg" alt="quarter_circle" class="ico">
+                    <p>Quarter Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="ash_cir_7">
+                <div class="buttons_1" id="ash_cir_8" onclick="show([ash_cir_custom, bb_ash_cir_custom, calc_btn_ash_cir_custom, ic_22, ic_23, ic_24])">
+                    <img src="./Assets/custom_circle.svg" alt="custom_circle" class="ico">
+                    <p>Custom Angled Circle</p>
+                </div>
+            </div>            
+        </div>
+        <div class="frame5" id="ash_sq">
+            <div class="input_cont" id="ic_1">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="ash_sq_len">
+            </div>
+            <div class="input_cont" id="ic_2">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_sq_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_sq()" id="calc_btn_ash_sq">Calculate</div>
+        </div>
+        <div class="frame5" id="ash_rect">
+            <div class="input_cont" id="ic_3">
+                <p class="input_labels">Length</p>
+                <input type="number" id="ash_rect_len">
+            </div>
+            <div class="input_cont" id="ic_4">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="ash_rect_bred">
+            </div>
+            <div class="input_cont" id="ic_5">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_rect_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_rect()" id="calc_btn_ash_rect">Calculate</div>
+        </div>
+        <div class="frame5" id="ash_tri">
+            <div class="input_cont" id="ic_6">
+                <p class="input_labels">Base Length</p>
+                <input type="number" id="ash_tri_len">
+            </div>
+            <div class="input_cont" id="ic_7">
+                <p class="input_labels">Height</p>
+                <input type="number" id="ash_tri_hei">
+            </div>
+            <div class="input_cont" id="ic_8">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_tri_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_tri()" id="calc_btn_ash_tri">Calculate</div>
+        </div>
+        <div class="frame5" id="ash_oval">
+            <div class="input_cont" id="ic_9">
+                <p class="input_labels">Radius 1</p>
+                <input type="number" id="ash_oval_r1">
+            </div>
+            <div class="input_cont" id="ic_10">
+                <p class="input_labels">Radius 2</p>
+                <input type="number" id="ash_oval_r2">
+            </div>
+            <div class="input_cont" id="ic_11">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_oval_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_oval()" id="calc_btn_ash_oval">Calculate</div>            
+        </div>
+        <div class="frame5" id="ash_pent">
+            <div class="input_cont" id="ic_12">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="ash_pent_len">
+            </div>
+            <div class="input_cont" id="ic_13">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_pent_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_pent()" id="calc_btn_ash_pent">Calculate</div>
+        </div>
+        <div class="frame5" id="ash_hex">
+            <div class="input_cont" id="ic_14">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="ash_hex_len">
+            </div>
+            <div class="input_cont" id="ic_15">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_hex_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_hex()" id="calc_btn_ash_hex">Calculate</div>
+        </div>
+        <div class="frame4" id="ash_cir_full">
+            <div class="input_cont" id="ic_16">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="ash_cir_full_r">
+            </div>
+            <div class="input_cont" id="ic_17">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_cir_full_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cir_full()" id="calc_btn_ash_cir_full">Calculate</div>
+        </div>
+        <div class="frame4" id="ash_cir_semi">
+            <div class="input_cont" id="ic_18">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="ash_cir_semi_r">
+            </div>
+            <div class="input_cont" id="ic_19">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_cir_semi_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cir_semi()" id="calc_btn_ash_cir_semi">Calculate</div>
+        </div>
+        <div class="frame4" id="ash_cir_quarter">
+            <div class="input_cont" id="ic_20">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="ash_cir_quarter_r">
+            </div>
+            <div class="input_cont" id="ic_21">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_cir_quarter_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cir_quarter()" id="calc_btn_ash_cir_quarter">Calculate</div>
+        </div>
+        <div class="frame4" id="ash_cir_custom">
+            <div class="input_cont" id="ic_22">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="ash_cir_custom_r">
+            </div>
+            <div class="input_cont" id="ic_23">
+                <p class="input_labels">Angle</p>
+                <input type="number" id="ash_cir_custom_ang">
+            </div>
+            <div class="input_cont" id="ic_24">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="ash_cir_custom_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cir_custom()" id="calc_btn_ash_cir_custom">Calculate</div>
+        </div>
+
+        <div class="frame2" id="area_solids">
+            <div class="border_box_2" id="aso_1">    
+                <div class="buttons" id="aso_2" onclick="show([aso_cube, bb_aso_cube, calc_btn_aso_cube, ic_25, ic_26])">
+                    <img src="./Assets/cube.svg" alt="Cube" class="ico">
+                    <p>Cube</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="aso_3">
+                <div class="buttons" id="aso_4" onclick="show([aso_cuboid, bb_aso_cuboid, calc_btn_aso_cuboid, ic_27, ic_28, ic_29, ic_30])">
+                    <img src="./Assets/cuboid.svg" alt="Cuboid" class="ico">
+                    <p>Cuboid</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="aso_5">    
+                <div class="buttons" id="aso_6" onclick="show([aso_tetrahedron, bb_aso_tetrahedron, calc_btn_aso_tetra, ic_31, ic_32])">
+                    <img src="./Assets/tetrahedron.svg" alt="Tetrahedron" class="ico">
+                    <p>Tetrahedron</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="aso_7">
+                <div class="buttons" id="aso_8" onclick="show([aso_pyramid, bb_aso_pyramid, calc_btn_aso_pyramid, ic_34, ic_35, ic_36])">
+                    <img src="./Assets/pyramid.svg" alt="Pyramid" class="ico">
+                    <p>Pyramid</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="aso_9">    
+                <div class="buttons" id="aso_10" onclick="show([aso_ball, bb_aso_ball, calc_btn_aso_ball, ic_37, ic_38])">
+                    <img src="./Assets/sphere.svg" alt="Ball" class="ico">
+                    <p>Ball</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="aso_11">
+                <div class="buttons" id="aso_12" onclick="show([aso_cylinder, bb_aso_cylinder, calc_btn_aso_cylinder, ic_39, ic_40, ic_41])">
+                    <img src="./Assets/cylinder.svg" alt="Cylinder" class="ico">
+                    <p>Cylinder</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame5" id="aso_cube">
+            <div class="input_cont" id="ic_25">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="aso_cube_len">
+            </div>
+            <div class="input_cont" id="ic_26">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_cube_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cube()" id="calc_btn_aso_cube">Calculate</div>
+        </div>
+        <div class="frame5" id="aso_cuboid">
+            <div class="input_cont" id="ic_27">
+                <p class="input_labels">Length</p>
+                <input type="number" id="aso_cuboid_len">
+            </div>
+            <div class="input_cont" id="ic_28">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="aso_cuboid_bred">
+            </div>
+            <div class="input_cont" id="ic_29">
+                <p class="input_labels">Height</p>
+                <input type="number" id="aso_cuboid_hei">
+            </div>
+            <div class="input_cont" id="ic_30">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_cuboid_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cuboid()" id="calc_btn_aso_cuboid">Calculate</div>
+        </div>
+        <div class="frame5" id="aso_tetrahedron">
+            <div class="input_cont" id="ic_31">
+                <p class="input_labels">Base Length</p>
+                <input type="number" id="aso_tetra_len">
+            </div>
+            <div class="input_cont" id="ic_32">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_tetra_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_tetra()" id="calc_btn_aso_tetra">Calculate</div>
+        </div>
+        <div class="frame5" id="aso_pyramid">
+            <div class="input_cont" id="ic_34">
+                <p class="input_labels">Base Length</p>
+                <input type="number" id="aso_pyramid_len">
+            </div>
+            <div class="input_cont" id="ic_35">
+                <p class="input_labels">Perpendicular Height</p>
+                <input type="number" id="aso_pyramid_hei">
+            </div>
+            <div class="input_cont" id="ic_36">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_pyramid_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_pyramid()" id="calc_btn_aso_pyramid">Calculate</div>
+        </div>
+        <div class="frame5" id="aso_ball">
+            <div class="input_cont" id="ic_37">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="aso_ball_r">
+            </div>
+            <div class="input_cont" id="ic_38">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_ball_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_ball()" id="calc_btn_aso_ball">Calculate</div>
+        </div>
+        <div class="frame5" id="aso_cylinder">
+            <div class="input_cont" id="ic_39">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="aso_cylinder_r">
+            </div>
+            <div class="input_cont" id="ic_40">
+                <p class="input_labels">Height</p>
+                <input type="number" id="aso_cylinder_hei">
+            </div>
+            <div class="input_cont" id="ic_41">
+                <p class="input_labels">Area</p>
+                <input class="ans" type="text" readonly id="aso_cylinder_ans">
+            </div>
+            <div class="calc_btn" onclick="ar_cylinder()" id="calc_btn_aso_cylinder">Calculate</div>
+
+        </div>
+
+        <div class="frame" id="perimeter">
+            <div class="border_box_2" id="pb_1">
+                <div class="buttons" id="pb_3" onclick="show([per_shapes, bb_per_shapes, psh_1, psh_2, psh_3, psh_4, psh_5, psh_6, psh_7, psh_8, psh_9, psh_10, psh_11, psh_12, psh_13, psh_14])">
+                    <img src="./Assets/shapes.svg" alt="Shapes" class="ico">
+                    <p>Shapes</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="pb_2">
+                <div class="buttons" id="pb_4" onclick="show([per_solids, bb_per_solids, pso_1, pso_2, pso_3, pso_4, pso_5, pso_6, pso_7, pso_8])">
+                    <img src="./Assets/solids.svg" alt="Solids" class="ico">
+                    <p>Solids</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame2" id="per_shapes">
+            <div class="border_box_3" id="psh_1">    
+                <div class="buttons_1" id="psh_2" onclick="show([per_sq, bb_per_sq, calc_btn_psh_sq, ic_42, ic_43])">
+                    <img src="./Assets/square.svg" alt="Square" class="ico">
+                    <p>Square</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_3">
+                <div class="buttons_1" id="psh_4" onclick="show([per_rect, bb_per_rect, calc_btn_psh_rect, ic_44, ic_45, ic_46])">
+                    <img src="./Assets/rectangle.svg" alt="Rectangle" class="ico">
+                    <p>Rectangle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_5">    
+                <div class="buttons_1" id="psh_6" onclick="show([per_tri, bb_per_tri, calc_btn_psh_tri, ic_47, ic_48])">
+                    <img src="./Assets/triangle.svg" alt="Triangle" class="ico">
+                    <p>Equilateral Triangle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_7">
+                <div class="buttons_1" id="psh_8" onclick="show([psh_cir, bb_per_shapes_cir, psh_cir_1, psh_cir_2, psh_cir_3, psh_cir_4, psh_cir_5, psh_cir_6, psh_cir_7, psh_cir_8])">
+                    <img src="./Assets/circle.svg" alt="Circle" class="ico">
+                    <p>Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_9">    
+                <div class="buttons_1" id="psh_10" onclick="show([per_oval, bb_per_oval, calc_btn_psh_oval, ic_49, ic_50, ic_51])">
+                    <img src="./Assets/oval.svg" alt="Oval" class="ico">
+                    <p>Oval</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_11">
+                <div class="buttons_1" id="psh_12" onclick="show([per_pent, bb_per_pent, calc_btn_psh_pent, ic_52, ic_53])">
+                    <img src="./Assets/pentagon.svg" alt="Pentagon" class="ico">
+                    <p>Regular Pentagon</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_13">
+                <div class="buttons_1" id="psh_14" onclick="show([per_hex, bb_per_hex, calc_btn_psh_hex, ic_54, ic_55])">
+                    <img src="./Assets/hexagon.svg" alt="Hexagon" class="ico">
+                    <p>Regular Hexagon</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame3" id="psh_cir">
+            <div class="border_box_3" id="psh_cir_1">    
+                <div class="buttons_1" id="psh_cir_2" onclick="show([per_cir_full, bb_per_cir_full, calc_btn_psh_cir_full, ic_56, ic_57])">
+                    <img src="./Assets/circle.svg" alt="circle" class="ico">
+                    <p>Full Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_cir_3">
+                <div class="buttons_1" id="psh_cir_4" onclick="show([per_cir_semi, bb_per_cir_semi, calc_btn_psh_cir_semi, ic_58, ic_59, ic_60])">
+                    <img src="./Assets/semicircle.svg" alt="semicircle" class="ico">
+                    <p>Semi Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_cir_5">    
+                <div class="buttons_1" id="psh_cir_6" onclick="show([per_cir_quarter, bb_per_cir_quarter, calc_btn_psh_cir_quarter, ic_61, ic_62, ic_63])">
+                    <img src="./Assets/quarter_circle.svg" alt="quarter_circle" class="ico">
+                    <p>Quarter Circle</p>
+                </div>
+            </div>
+            <div class="border_box_3" id="psh_cir_7">
+                <div class="buttons_1" id="psh_cir_8" onclick="show([per_cir_custom, bb_per_cir_custom, calc_btn_psh_cir_custom, ic_64, ic_65, ic_66, ic_67])">
+                    <img src="./Assets/custom_circle.svg" alt="custom_circle" class="ico">
+                    <p>Custom Angled Circle</p>
+                </div>
+            </div>            
+        </div>
+        <div class="frame5" id="per_sq">
+            <div class="input_cont" id="ic_42">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="psh_sq_len">
+            </div>
+            <div class="input_cont" id="ic_43">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_sq_ans">
+            </div>
+            <div class="calc_btn" onclick="per_sq_f()" id="calc_btn_psh_sq">Calculate</div>
+        </div>
+        <div class="frame5" id="per_rect">
+            <div class="input_cont" id="ic_44">
+                <p class="input_labels">Length</p>
+                <input type="number" id="psh_rect_len">
+            </div>
+            <div class="input_cont" id="ic_45">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="psh_rect_bred">
+            </div>
+            <div class="input_cont" id="ic_46">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_rect_ans">
+            </div>
+            <div class="calc_btn" onclick="per_rect_f()" id="calc_btn_psh_rect">Calculate</div>
+        </div>
+        <div class="frame5" id="per_tri">
+            <div class="input_cont" id="ic_47">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="psh_tri_len">
+            </div>
+            <div class="input_cont" id="ic_48">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_tri_ans">
+            </div>
+            <div class="calc_btn" onclick="per_tri_f()" id="calc_btn_psh_tri">Calculate</div>
+        </div>
+        <div class="frame5" id="per_oval">
+            <div class="input_cont" id="ic_49">
+                <p class="input_labels">Radius 1</p>
+                <input type="number" id="psh_oval_r1">
+            </div>
+            <div class="input_cont" id="ic_50">
+                <p class="input_labels">Radius 2</p>
+                <input type="number" id="psh_oval_r2">
+            </div>
+            <div class="input_cont" id="ic_51">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_oval_ans">
+            </div>
+            <div class="calc_btn" onclick="per_oval_f()" id="calc_btn_psh_oval">Calculate</div>
+        </div>
+        <div class="frame5" id="per_pent">
+            <div class="input_cont" id="ic_52">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="psh_pent_len">
+            </div>
+            <div class="input_cont" id="ic_53">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_pent_ans">
+            </div>
+            <div class="calc_btn" onclick="per_pent_f()" id="calc_btn_psh_pent">Calculate</div>
+        </div>
+        <div class="frame5" id="per_hex">
+            <div class="input_cont" id="ic_54">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="psh_hex_len">
+            </div>
+            <div class="input_cont" id="ic_55">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_hex_ans">
+            </div>
+            <div class="calc_btn" onclick="per_hex_f()" id="calc_btn_psh_hex">Calculate</div>
+        </div>
+        <div class="frame4" id="per_cir_full">
+            <div class="input_cont" id="ic_56">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="psh_cir_full_r">
+            </div>
+            <div class="input_cont" id="ic_57">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_cir_full_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cir_full_f()" id="calc_btn_psh_cir_full">Calculate</div>
+        </div>
+        <div class="frame4" id="per_cir_semi">
+            <div class="input_cont" id="ic_58">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="psh_cir_semi_r">
+            </div>
+            <div class="input_cont" id="ic_59">
+                <p class="input_labels">Arc Length</p>
+                <input class="ans" type="text" readonly id="psh_cir_semi_arc">
+            </div>
+            <div class="input_cont" id="ic_60">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_cir_semi_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cir_semi_f()" id="calc_btn_psh_cir_semi">Calculate</div>
+        </div>
+        <div class="frame4" id="per_cir_quarter">
+            <div class="input_cont" id="ic_61">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="psh_cir_quarter_r">
+            </div>
+            <div class="input_cont" id="ic_62">
+                <p class="input_labels">Arc Length</p>
+                <input class="ans" type="text" readonly id="psh_cir_quarter_arc">
+            </div>
+            <div class="input_cont" id="ic_63">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_cir_quarter_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cir_quarter_f()" id="calc_btn_psh_cir_quarter">Calculate</div>
+        </div>
+        <div class="frame4" id="per_cir_custom">
+            <div class="input_cont" id="ic_64">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="psh_cir_custom_r">
+            </div>
+            <div class="input_cont" id="ic_65">
+                <p class="input_labels">Angle</p>
+                <input type="number" id="psh_cir_custom_ang">
+            </div>
+            <div class="input_cont" id="ic_66">
+                <p class="input_labels">Arc Length</p>
+                <input class="ans" type="text" readonly id="psh_cir_custom_arc">
+            </div>
+            <div class="input_cont" id="ic_67">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="psh_cir_custom_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cir_custom_f()" id="calc_btn_psh_cir_custom">Calculate</div>
+        </div>
+
+        <div class="frame2" id="per_solids">
+            <div class="border_box_2" id="pso_1">    
+                <div class="buttons" id="pso_5" onclick="show([per_cube, bb_per_cube, calc_btn_pso_cube, ic_68, ic_69])">
+                    <img src="./Assets/cube.svg" alt="Cube" class="ico">
+                    <p>Cube</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="pso_2">
+                <div class="buttons" id="pso_6" onclick="show([per_cuboid, bb_per_cuboid, calc_btn_pso_cuboid, ic_70, ic_71, ic_72, ic_73])">
+                    <img src="./Assets/cuboid.svg" alt="Cuboid" class="ico">
+                    <p>Cuboid</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="pso_3">    
+                <div class="buttons" id="pso_7" onclick="show([per_tetrahedron, bb_per_tetrahedron, calc_btn_pso_tetra, ic_74, ic_75])">
+                    <img src="./Assets/tetrahedron.svg" alt="Tetrahedron" class="ico">
+                    <p>Tetrahedron</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="pso_4">
+                <div class="buttons" id="pso_8" onclick="show([per_pyramid, bb_per_pyramid, calc_btn_pso_pyramid, ic_76, ic_77, ic_78])">
+                    <img src="./Assets/pyramid.svg" alt="Pyramid" class="ico">
+                    <p>Pyramid</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame5" id="per_cube">
+            <div class="input_cont" id="ic_68">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="pso_cube_len">
+            </div>
+            <div class="input_cont" id="ic_69">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="pso_cube_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cube_f()" id="calc_btn_pso_cube">Calculate</div>
+        </div>
+        <div class="frame5" id="per_cuboid">
+            <div class="input_cont" id="ic_70">
+                <p class="input_labels">Length</p>
+                <input type="number" id="pso_cuboid_len">
+            </div>
+            <div class="input_cont" id="ic_71">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="pso_cuboid_bred">
+            </div>
+            <div class="input_cont" id="ic_72">
+                <p class="input_labels">Height</p>
+                <input type="number" id="pso_cuboid_hei">
+            </div>
+            <div class="input_cont" id="ic_73">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="pso_cuboid_ans">
+            </div>
+            <div class="calc_btn" onclick="per_cuboid_f()" id="calc_btn_pso_cuboid">Calculate</div>
+        </div>
+        <div class="frame5" id="per_tetrahedron">
+            <div class="input_cont" id="ic_74">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="pso_tetra_len">
+            </div>
+            <div class="input_cont" id="ic_75">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="pso_tetra_ans">
+            </div>
+            <div class="calc_btn" onclick="per_tetra_f()" id="calc_btn_pso_tetra">Calculate</div>
+        </div>
+        <div class="frame5" id="per_pyramid">
+            <div class="input_cont" id="ic_76">
+                <p class="input_labels">Length</p>
+                <input type="number" id="pso_pyramid_len">
+            </div>
+            <div class="input_cont" id="ic_77">
+                <p class="input_labels">Height</p>
+                <input type="number" id="pso_pyramid_hei">
+            </div>
+            <div class="input_cont" id="ic_78">
+                <p class="input_labels">Perimeter</p>
+                <input class="ans" type="text" readonly id="pso_pyramid_ans">
+            </div>
+            <div class="calc_btn" onclick="per_pyramid_f()" id="calc_btn_pso_pyramid">Calculate</div>
+        </div>
+
+        <div class="frame" id="volume">
+            <div class="border_box_2" id="vb_1">    
+                <div class="buttons" id="vb_7" onclick="show([vol_cube, bb_vol_cube, calc_btn_vol_cube, ic_79, ic_80])">
+                    <img src="./Assets/cube.svg" alt="Cube" class="ico">
+                    <p>Cube</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="vb_2">
+                <div class="buttons" id="vb_8" onclick="show([vol_cuboid, bb_vol_cuboid, calc_btn_vol_cuboid, ic_81, ic_82, ic_83, ic_84])">
+                    <img src="./Assets/cuboid.svg" alt="Cuboid" class="ico">
+                    <p>Cuboid</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="vb_3">    
+                <div class="buttons" id="vb_9" onclick="show([vol_tetrahedron, bb_vol_tetrahedron, calc_btn_vol_tetra, ic_85, ic_86])">
+                    <img src="./Assets/tetrahedron.svg" alt="Tetrahedron" class="ico">
+                    <p>Tetrahedron</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="vb_4">
+                <div class="buttons" id="vb_10" onclick="show([vol_pyramid, bb_vol_pyramid, calc_btn_vol_pyramid, ic_87, ic_88, ic_89, ic_95])">
+                    <img src="./Assets/pyramid.svg" alt="Pyramid" class="ico">
+                    <p>Pyramid</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="vb_5">    
+                <div class="buttons" id="vb_11" onclick="show([vol_ball, bb_vol_ball, calc_btn_vol_ball, ic_90, ic_91])">
+                    <img src="./Assets/sphere.svg" alt="Ball" class="ico">
+                    <p>Ball</p>
+                </div>
+            </div>
+            <div class="border_box_2" id="vb_6">
+                <div class="buttons" id="vb_12" onclick="show([vol_cylinder, bb_vol_cylinder, calc_btn_vol_cylinder, ic_92, ic_93, ic_94])">
+                    <img src="./Assets/cylinder.svg" alt="Cylinder" class="ico">
+                    <p>Cylinder</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame5" id="vol_cube">
+            <div class="input_cont" id="ic_79">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="vol_cube_len">
+            </div>
+            <div class="input_cont" id="ic_80">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_cube_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_cube_f()" id="calc_btn_vol_cube">Calculate</div>
+        </div>
+        <div class="frame5" id="vol_cuboid">
+            <div class="input_cont" id="ic_81">
+                <p class="input_labels">Length</p>
+                <input type="number" id="vol_cuboid_len">
+            </div>
+            <div class="input_cont" id="ic_82">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="vol_cuboid_bred">
+            </div>
+            <div class="input_cont" id="ic_83">
+                <p class="input_labels">Height</p>
+                <input type="number" id="vol_cuboid_hei">
+            </div>
+            <div class="input_cont" id="ic_84">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_cuboid_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_cuboid_f()" id="calc_btn_vol_cuboid">Calculate</div>
+        </div>
+        <div class="frame5" id="vol_tetrahedron">
+            <div class="input_cont" id="ic_85">
+                <p class="input_labels">Side Length</p>
+                <input type="number" id="vol_tetra_len">
+            </div>
+            <div class="input_cont" id="ic_86">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_tetra_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_tetra_f()" id="calc_btn_vol_tetra">Calculate</div>
+        </div>
+        <div class="frame5" id="vol_pyramid">
+            <div class="input_cont" id="ic_87">
+                <p class="input_labels">Length</p>
+                <input type="number" id="vol_pyramid_len">
+            </div>
+            <div class="input_cont" id="ic_88">
+                <p class="input_labels">Height</p>
+                <input type="number" id="vol_pyramid_hei">
+            </div>
+            <div class="input_cont" id="ic_95">
+                <p class="input_labels">Breadth</p>
+                <input type="number" id="vol_pyramid_bred">
+            </div>
+            <div class="input_cont" id="ic_89">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_pyramid_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_pyramid_f()" id="calc_btn_vol_pyramid">Calculate</div>
+        </div>
+        <div class="frame5" id="vol_ball">
+            <div class="input_cont" id="ic_90">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="vol_ball_r">
+            </div>
+            <div class="input_cont" id="ic_91">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_ball_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_ball_f()" id="calc_btn_vol_ball">Calculate</div>
+        </div>
+        <div class="frame5" id="vol_cylinder">
+            <div class="input_cont" id="ic_92">
+                <p class="input_labels">Radius</p>
+                <input type="number" id="vol_cylinder_r">
+            </div>
+            <div class="input_cont" id="ic_93">
+                <p class="input_labels">Height</p>
+                <input type="number" id="vol_cylinder_hei">
+            </div>
+            <div class="input_cont" id="ic_94">
+                <p class="input_labels">Volume</p>
+                <input class="ans" type="text" readonly id="vol_cylinder_ans">
+            </div>
+            <div class="calc_btn" onclick="vol_cylinder_f()" id="calc_btn_vol_cylinder">Calculate</div>
+        </div>
+
+        <div id="null_dialogue">
+            <p id="nd_1">Please don't keep anything <u>empty</u> or <u>0</u>...!!!</p>
+            <p id="nd_2" onclick="nd_back()">Close</p>
+        </div>
+
+        <p class="back_btn" id="bb_area" onclick="back([area_frame, bb_area, ab_1, ab_2, ab_3, ab_4])">Back</p>
+        <p class="back_btn" id="bb_per" onclick="back([per_frame, bb_per, pb_1, pb_2, pb_3, pb_4])">Back</p>
+        <p class="back_btn" id="bb_vol" onclick="back([vol_frame, bb_vol, vb_1, vb_2, vb_3, vb_4, vb_5, vb_6, vb_7, vb_8, vb_9, vb_10, vb_11, vb_12])">Back</p>
+
+        <p class="back_btn" id="bb_area_shapes" onclick="back([area_shapes, bb_area_shapes, ash_1, ash_2, ash_3, ash_4, ash_5, ash_6, ash_7, ash_8, ash_9, ash_10, ash_11, ash_12, ash_13, ash_14])">Back</p>
+        <p class="back_btn" id="bb_area_solids" onclick="back([area_solids, bb_area_solids, aso_1, aso_2, aso_3, aso_4, aso_5, aso_6, aso_7, aso_8, aso_9, aso_10, aso_11, aso_12])">Back</p>
+
+        <p class="back_btn" id="bb_per_shapes" onclick="back([per_shapes, bb_per_shapes, psh_1, psh_2, psh_3, psh_4, psh_5, psh_6, psh_7, psh_8, psh_9, psh_10, psh_11, psh_12, psh_13, psh_14])">Back</p>
+        <p class="back_btn" id="bb_per_solids" onclick="back([per_solids, bb_per_solids, pso_1, pso_2, pso_3, pso_4, pso_5, pso_6, pso_7, pso_8])">Back</p>
+
+        <p class="back_btn" id="bb_per_shapes_cir" onclick="back([psh_cir, bb_per_shapes_cir, psh_cir_1, psh_cir_2, psh_cir_3, psh_cir_4, psh_cir_5, psh_cir_6, psh_cir_7, psh_cir_8])">Back</p>
+        <p class="back_btn" id="bb_ar_shapes_cir" onclick="back([ash_cir, bb_ar_shapes_cir, ash_cir_1, ash_cir_2, ash_cir_3, ash_cir_4, ash_cir_5, ash_cir_6, ash_cir_7, ash_cir_8])">Back</p>
+
+        <p class="back_btn" id="bb_ash_sq" onclick="back([ash_sq, bb_ash_sq, calc_btn_ash_sq, ic_1, ic_2])">Back</p>
+        <p class="back_btn" id="bb_ash_rect" onclick="back([ash_rect, bb_ash_rect, calc_btn_ash_rect, ic_3, ic_4, ic_5])">Back</p>
+        <p class="back_btn" id="bb_ash_tri" onclick="back([ash_tri, bb_ash_tri, calc_btn_ash_tri, ic_6, ic_7, ic_8])">Back</p>
+        <p class="back_btn" id="bb_ash_oval" onclick="back([ash_oval, bb_ash_oval, calc_btn_ash_oval, ic_9, ic_10, ic_11])">Back</p>
+        <p class="back_btn" id="bb_ash_pent" onclick="back([ash_pent, bb_ash_pent, calc_btn_ash_pent, ic_12, ic_13])">Back</p>
+        <p class="back_btn" id="bb_ash_hex" onclick="back([ash_hex, bb_ash_hex, calc_btn_ash_hex, ic_14, ic_15])">Back</p>
+        <p class="back_btn" id="bb_ash_cir_full" onclick="back([ash_cir_full, bb_ash_cir_full, calc_btn_ash_cir_full, ic_16, ic_17])">Back</p>
+        <p class="back_btn" id="bb_ash_cir_semi" onclick="back([ash_cir_semi, bb_ash_cir_semi, calc_btn_ash_cir_semi, ic_18, ic_19])">Back</p>
+        <p class="back_btn" id="bb_ash_cir_quarter" onclick="back([ash_cir_quarter, bb_ash_cir_quarter, calc_btn_ash_cir_quarter, ic_20, ic_21])">Back</p>
+        <p class="back_btn" id="bb_ash_cir_custom" onclick="back([ash_cir_custom, bb_ash_cir_custom, calc_btn_ash_cir_custom, ic_22, ic_23, ic_24])">Back</p>
+
+        <p class="back_btn" id="bb_aso_cube" onclick="back([aso_cube, bb_aso_cube, calc_btn_aso_cube, ic_25, ic_26])">Back</p>
+        <p class="back_btn" id="bb_aso_cuboid" onclick="back([aso_cuboid, bb_aso_cuboid, calc_btn_aso_cuboid, ic_27, ic_28, ic_29, ic_30])">Back</p>
+        <p class="back_btn" id="bb_aso_tetrahedron" onclick="back([aso_tetrahedron, bb_aso_tetrahedron, calc_btn_aso_tetra, ic_31, ic_32])">Back</p>
+        <p class="back_btn" id="bb_aso_pyramid" onclick="back([aso_pyramid, bb_aso_pyramid, calc_btn_aso_pyramid, ic_34, ic_35, ic_36])">Back</p>
+        <p class="back_btn" id="bb_aso_ball" onclick="back([aso_ball, bb_aso_ball, calc_btn_aso_ball, ic_37, ic_38])">Back</p>
+        <p class="back_btn" id="bb_aso_cylinder" onclick="back([aso_cylinder, bb_aso_cylinder, calc_btn_aso_cylinder, ic_39, ic_40, ic_41])">Back</p>
+
+        <p class="back_btn" id="bb_per_sq" onclick="back([per_sq, bb_per_sq, calc_btn_psh_sq, ic_42, ic_43])">Back</p>
+        <p class="back_btn" id="bb_per_rect" onclick="back([per_rect, bb_per_rect, calc_btn_psh_rect, ic_44, ic_45, ic_46])">Back</p>
+        <p class="back_btn" id="bb_per_tri" onclick="back([per_tri, bb_per_tri, calc_btn_psh_tri, ic_47, ic_48])">Back</p>
+        <p class="back_btn" id="bb_per_oval" onclick="back([per_oval, bb_per_oval, calc_btn_psh_oval, ic_49, ic_50, ic_51])">Back</p>
+        <p class="back_btn" id="bb_per_pent" onclick="back([per_pent, bb_per_pent, calc_btn_psh_pent, ic_52, ic_53])">Back</p>
+        <p class="back_btn" id="bb_per_hex" onclick="back([per_hex, bb_per_hex, calc_btn_psh_hex, ic_54, ic_55])">Back</p>
+        <p class="back_btn" id="bb_per_cir_full" onclick="back([per_cir_full, bb_per_cir_full, calc_btn_psh_cir_full, ic_56, ic_57])">Back</p>
+        <p class="back_btn" id="bb_per_cir_semi" onclick="back([per_cir_semi, bb_per_cir_semi, calc_btn_psh_cir_semi, ic_58, ic_59, ic_60])">Back</p>
+        <p class="back_btn" id="bb_per_cir_quarter" onclick="back([per_cir_quarter, bb_per_cir_quarter, calc_btn_psh_cir_quarter, ic_61, ic_62, ic_63])">Back</p>
+        <p class="back_btn" id="bb_per_cir_custom" onclick="back([per_cir_custom, bb_per_cir_custom, calc_btn_psh_cir_custom, ic_64, ic_65, ic_66, ic_67])">Back</p>
+
+        <p class="back_btn" id="bb_per_cube" onclick="back([per_cube, bb_per_cube, calc_btn_pso_cube, ic_68, ic_69])">Back</p>
+        <p class="back_btn" id="bb_per_cuboid" onclick="back([per_cuboid, bb_per_cuboid, calc_btn_pso_cuboid, ic_70, ic_71, ic_72, ic_73])">Back</p>
+        <p class="back_btn" id="bb_per_tetrahedron" onclick="back([per_tetrahedron, bb_per_tetrahedron, calc_btn_pso_tetra, ic_74, ic_75])">Back</p>
+        <p class="back_btn" id="bb_per_pyramid" onclick="back([per_pyramid, bb_per_pyramid, calc_btn_pso_pyramid, ic_76, ic_77, ic_78])">Back</p>
+
+        <p class="back_btn" id="bb_vol_cube" onclick="back([vol_cube, bb_vol_cube, calc_btn_vol_cube, ic_79, ic_80])">Back</p>
+        <p class="back_btn" id="bb_vol_cuboid" onclick="back([vol_cuboid, bb_vol_cuboid, calc_btn_vol_cuboid, ic_81, ic_82, ic_83, ic_84])">Back</p>
+        <p class="back_btn" id="bb_vol_tetrahedron" onclick="back([vol_tetrahedron, bb_vol_tetrahedron, calc_btn_vol_tetra, ic_85, ic_86])">Back</p>
+        <p class="back_btn" id="bb_vol_pyramid" onclick="back([vol_pyramid, bb_vol_pyramid, calc_btn_vol_pyramid, ic_87, ic_88, ic_89, ic_95])">Back</p>
+        <p class="back_btn" id="bb_vol_ball" onclick="back([vol_ball, bb_vol_ball, calc_btn_vol_ball, ic_90, ic_91])">Back</p>
+        <p class="back_btn" id="bb_vol_cylinder" onclick="back([vol_cylinder, bb_vol_cylinder, calc_btn_vol_cylinder, ic_92, ic_93, ic_94])">Back</p>
+
+    </body>
+</html>
