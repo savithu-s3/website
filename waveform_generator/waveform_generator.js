@@ -345,6 +345,8 @@ document.getElementById("startButton").addEventListener("click", ()=>{
                 alert("Plase enter values from 1 - 20000 for frequency...!");
             } else if (duration_val==0 | duration_val>60) {
                 alert("Duration must be from 1 to 60");
+            } else if (sweep_from_val==sweep_to_val) {
+                alert("Frequencies cannot be equal");
             } else {
                 playing = true;
                 sweep_gen(active_mode, sweep_from_val, sweep_to_val, duration_val);
