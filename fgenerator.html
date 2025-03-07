@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Waveform Generator
+    </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="waveform_generator/style.css">
+</head>
+
+
+<body>
+    <label id="title">Waveform Generator</label>
+    <div style="display:flex;position: absolute;top: 10px;left: 10px;width: fit-content;height: fit-content;align-items: center;flex-direction: row;">
+        <button id="theme_button">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="theme_btn_ico" height="3vh" width="3vh" aria-labelledby="nightModeIconTitle" stroke="#000000" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12 19a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"></path> <path d="M15.899 12.899a4 4 0 0 1-4.797-4.797A4.002 4.002 0 0 0 12 16c1.9 0 3.49-1.325 3.899-3.101z"></path> <path d="M12 5V3M12 21v-2"></path> <path d="M5 12H2h3zM22 12h-3 3zM16.95 7.05L19.07 4.93 16.95 7.05zM4.929 19.071L7.05 16.95 4.93 19.07zM16.95 16.95l2.121 2.121-2.121-2.121zM4.929 4.929L7.05 7.05 4.93 4.93z"></path> </g>
+            </svg>
+        </button>
+        <div  id="color_pallete">
+            <button id="color_button">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2.5vh" height="2.5vh" viewBox="0 0 50 50" fill="white">
+                    <path d="M 37.46875 4 A 1.50015 1.50015 0 0 0 36.253906 4.6640625 C 36.253906 4.6640625 34.976527 6.5654144 33.693359 8.8320312 C 33.051776 9.9653398 32.40732 11.192747 31.904297 12.359375 C 31.401274 13.526003 30.999586 14.571439 31 15.714844 C 31 17.439888 31.785357 18.924661 32.888672 20.089844 L 32.005859 38.226562 L 32.007812 38.224609 C 31.852076 41.345283 34.375024 44 37.5 44 C 40.624976 44 43.147877 41.345236 42.992188 38.224609 L 42.994141 38.238281 L 42.25 19.947266 C 43.272567 18.801636 44 17.37006 44 15.714844 C 44 14.571773 43.59875 13.52594 43.095703 12.359375 C 42.592657 11.19281 41.946196 9.9653204 41.304688 8.8320312 C 40.02167 6.5654533 38.746094 4.6640625 38.746094 4.6640625 A 1.50015 1.50015 0 0 0 37.46875 4 z M 23.5 5 C 11.294 5 4 13.897 4 22.5 C 4 27.107 7.435 31 11.5 31 C 13.134 31 14.770797 30.664187 16.216797 30.367188 C 17.136797 30.179187 18.005 30 18.5 30 C 20.367 30 20.776922 30.858484 21.419922 34.271484 C 22.074922 37.747484 23.064125 43 30.578125 43 C 30.867125 43 31.163891 42.973406 31.462891 42.941406 C 30.807891 42.055406 30.367297 41.051375 30.154297 39.984375 C 25.533297 39.826375 25.010187 37.122797 24.367188 33.716797 C 23.834187 30.882797 23.104 27 18.5 27 C 17.7 27 16.733281 27.198688 15.613281 27.429688 C 14.309281 27.696688 12.829 28 11.5 28 C 9.371 28 7 25.741 7 22.5 C 7 15.372 13.172 8 23.5 8 C 26.169 8 28.691031 8.6174063 30.957031 9.6914062 C 31.413031 8.7854062 31.904578 7.8945938 32.392578 7.0585938 C 29.697578 5.7535938 26.689 5 23.5 5 z M 37.5 8.3652344 C 37.954499 9.0858372 38.099624 9.2582027 38.695312 10.310547 C 39.303804 11.385508 39.907343 12.539378 40.341797 13.546875 C 40.77625 14.554372 41 15.476914 41 15.714844 C 41 16.616906 40.609202 17.380811 40.048828 18 L 34.960938 18 C 34.401372 17.381244 34 16.620842 34 15.714844 A 1.50015 1.50015 0 0 0 34 15.712891 C 33.999914 15.475296 34.22382 14.55431 34.658203 13.546875 C 35.092586 12.53944 35.696146 11.385488 36.304688 10.310547 C 36.900424 9.2582688 37.045432 9.0858272 37.5 8.3652344 z M 23.5 11 A 2.5 2.5 0 0 0 23.5 16 A 2.5 2.5 0 0 0 23.5 11 z M 16.5 13 A 2.5 2.5 0 0 0 16.5 18 A 2.5 2.5 0 0 0 16.5 13 z M 12.5 19 A 2.5 2.5 0 0 0 12.5 24 A 2.5 2.5 0 0 0 12.5 19 z M 35.849609 21 L 39.291016 21 L 39.412109 24 L 35.703125 24 L 35.849609 21 z M 35.556641 27 L 39.535156 27 L 39.996094 38.361328 A 1.50015 1.50015 0 0 0 39.996094 38.375 C 40.068404 39.824375 38.951024 41 37.5 41 C 36.048976 41 34.931596 39.824373 35.003906 38.375 A 1.50015 1.50015 0 0 0 35.003906 38.373047 L 35.556641 27 z"></path>
+                </svg>
+            </button>
+            <button id="red_button" class="color_btns"></button>
+            <button id="pink_button" class="color_btns"></button>
+            <button id="blue_button" class="color_btns"></button>
+            <button id="green_button" class="color_btns"></button>
+            <button id="yellow_button" class="color_btns"></button>
+            <button id="orange_button" class="color_btns"></button>
+        </div>    
+    </div>
+    <div id="main">
+        <div id="slider_cont">
+            <div style="display:flex;">
+                <input type="number" id="ten_thousand" class="frequencyValue" min="0" max="2" value="0" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"></input>
+                <input type="number" id="thousand" class="frequencyValue" min="0" max="9" value="1" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"></input>
+                <input type="number" id="hundred" class="frequencyValue" min="0" max="9" value="0" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"></input>
+                <input type="number" id="ten" class="frequencyValue" min="0" max="9" value="0" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"></input>
+                <input type="number" id="unit" class="frequencyValue" min="0" max="9" value="0" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"></input>
+            </div>
+            <label style="color:var(--primary-color); font-family:consolas;">Hertz(Hz)</label>
+        </div>
+        <input type="range" min="1" max="20000" value="1000" id="frequency_slider" step="1">
+        <div style="display:flex; align-items: center;">
+            <label style="font-family:consolas; color:var(--primary-color); font-size:1em; margin-right:10px;">Sweep</label>
+            <label class="toggle_button">
+                <input type="checkbox"></input>
+                <span class="toggle_slider"></span>
+            </label>
+        </div>
+        <div id="sweep_div">
+            <input type="number" id="sweep_from" class="sweep_input" min="0" max="20000" placeholder="From"></input>
+            <input type="number" id="sweep_to" class="sweep_input" min="0" max="20000" placeholder="To"></input>
+            <input type="number" id="sweep_duration" class="sweep_input" min="1" max="60" placeholder="Duration"></input>
+        </div>
+        <div id="btn_cont">
+            <button id="sine" class="mode_btn" onclick="change_mode('sine' , sine)">
+                <svg class="button_ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M16.5,21C13.5,21 12.31,16.76 11.05,12.28C10.14,9.04 9,5 7.5,5C4.11,5 4,11.93 4,12H2C2,11.63 2.06,3 7.5,3C10.5,3 11.71,7.25 12.97,11.74C13.83,14.8 15,19 16.5,19C19.94,19 20.03,12.07 20.03,12H22.03C22.03,12.37 21.97,21 16.5,21Z" />
+                </svg>
+            <button id="triangle" class="mode_btn" onclick="change_mode('triangle' , triangle)">
+                <svg class="button_ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 12L17 22L7.1 6.04L4.24 12H2L7 2L16.9 17.96L19.76 12H22Z" />
+                </svg>
+            </button>
+            <button id="square" class="mode_btn" onclick="change_mode('square' , square)">            
+                <svg class="button_ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M2 2V12H4V4H11V22H22V12H20V20H13V2H2Z" />
+                </svg>
+            </button>
+            <button id="sawtooth" class="mode_btn" onclick="change_mode('sawtooth' , sawtooth)">
+                <svg class="button_ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M11 22V6.83L2 16V13.17L13 2V17.17L22 8V10.83L11 22Z"/>
+                </svg>
+            </button>
+        </div>
+        <div id="controls_main">
+            <div class="controls">
+                <button id="startButton">
+                    <svg id="play_svg" class="controls_svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90%" height="90%" viewBox="-3.5 -3 50 50">
+                        <path d="M 11.396484 4.1113281 C 9.1042001 4.2020187 7 6.0721788 7 8.5917969 L 7 39.408203 C 7 42.767694 10.742758 44.971891 13.681641 43.34375 L 41.490234 27.935547 C 44.513674 26.260259 44.513674 21.739741 41.490234 20.064453 L 13.681641 4.65625 C 12.94692 4.2492148 12.160579 4.0810979 11.396484 4.1113281 z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="controls">
+                <button id="stopButton">
+                    <svg id="pause_svg" class="controls_svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90%" height="90%" viewBox="-1.5 -3 50 50">
+                        <path d="M 10.5 5 C 8.0324991 5 6 7.0324991 6 9.5 L 6 38.5 C 6 40.967501 8.0324991 43 10.5 43 L 15.5 43 C 17.967501 43 20 40.967501 20 38.5 L 20 9.5 C 20 7.0324991 17.967501 5 15.5 5 L 10.5 5 z M 32.5 5 C 30.032499 5 28 7.0324991 28 9.5 L 28 38.5 C 28 40.967501 30.032499 43 32.5 43 L 37.5 43 C 39.967501 43 42 40.967501 42 38.5 L 42 9.5 C 42 7.0324991 39.967501 5 37.5 5 L 32.5 5 z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>    
+    <script src="waveform_generator/waveform_generator.js"></script>    
+</body>
+</html>

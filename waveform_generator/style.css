@@ -1,0 +1,454 @@
+:root {
+    --theme-light: #fafafa;
+    --theme-light-text: #000000;
+    --theme-light-slider: #bfbfbf;
+
+    --theme-dark: #202124;
+    --theme-dark-text: #ffffff;
+    --theme-dark-slider: #565656;
+    
+    --theme-text: var(--theme-dark-text);
+    --theme-slider: var(--theme-dark-slider);
+    --theme: var(--theme-dark);
+    
+    --red: #ff0000;
+    --red-secondary: #a10000;
+    --pink: #db5dcb;
+    --pink-secondary: #950082;
+    --blue: #1486ff;
+    --blue-secondary: #004c9d;
+    --green: #019f00;
+    --green-secondary: #015000;
+    --yellow: #ebbf00;
+    --yellow-secondary: #b08f00;
+    --orange: #ff6300;
+    --orange-secondary: #a33f00;
+    
+    --secondary-color: var(--yellow-secondary);
+    --primary-color: var(--yellow);
+}
+
+*{
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-color: var(--theme);
+    overflow: auto;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: all 250ms ease;
+}
+
+.mode_btn {
+    display: flex;
+    height: 8vh;
+    width: 10vw;
+    background-color: var(--theme);
+    border: solid var(--primary-color) 3px;
+    border-radius: 10px;
+    transition: 300ms;
+    margin: 10px;
+    font-weight: bold;
+    color: var(--theme-text);
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+.mode_btn:hover {
+    height: 8vh;
+    width: 10vw;
+    background-color: var(--primary-color);
+    border: solid var(--primary-color) 3px;
+    border-radius: 10px;
+    transition: 300ms;
+    margin: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+.mode_btn_active {
+    display: flex;
+    height: 8vh;
+    width: 10vw;
+    background-color: var(--secondary-color);
+    border: solid var(--secondary-color) 3px;
+    border-radius: 10px;
+    transition: 300ms;
+    margin: 10px;
+    color: #000;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    min-height: 40px;
+}
+
+#controls_main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-width: 100px;
+    min-height: 40px;
+    border-width: 3px;
+    border-style: none;
+    margin: 4vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.controls {
+    height: 4.5vh;
+    width: 4.5vh;
+    min-width: 40px;
+    min-height: 40px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#stopButton , #startButton {
+	background: none;
+	border: none;
+}
+
+#btn_cont {
+    display: grid;
+    grid-template-columns: auto auto;
+    pointer-events: auto;
+    margin-top: 2vh;
+}
+
+#slider_cont {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto auto;
+    visibility: visible;
+}
+
+.frequencyValue {
+    height: calc(5.5vw);
+    width: 4vw;
+    min-width: 35px;
+    min-height: 45px;
+    color: var(--theme-text);
+    background: none;
+    font-family: consolas, monospace;
+    font-weight: bolder;
+    font-size: 3em;
+    margin: 10px;
+    border: solid var(--primary-color) 2px;
+    border-radius: 10px;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.frequencyValue:focus-visible {
+    border: solid var(--primary-color) 2px;
+    outline: none;
+}
+
+.frequencyValue::-webkit-inner-spin-button, .frequencyValue::-webkit-outer-spin-button, .sweep_input::-webkit-inner-spin-button, .sweep_input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sweep_input {
+    height: 3vh;
+    width: 11vw;
+    margin: 10px;
+    border: solid var(--primary-color);
+    border-radius: 7px;
+    background: none;
+    text-align: center;
+    font-family: consolas, monospace;
+    cursor: default;
+    font-size: 0.9em;
+    color: var(--theme-dark-text);
+}
+
+#frequency_slider {
+    width: 100%;
+    height: 15px;
+    background: var(--theme-slider);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 16px;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    overflow: hidden;
+    margin: 4vh;
+    transition: all 500ms ease-out;
+}
+
+#frequency_slider::-webkit-slider-thumb {
+    height: 100%;
+    width: 6.5%;
+    background-color: var(--theme);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: -407px 0 0 400px var(--primary-color);
+    transition: all 250ms ease;
+}
+
+#frequency_slider::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 16px;
+    background: var(--theme-slider);
+    transition: all 250ms ease;
+}
+
+#frequency_slider::-moz-range-track {
+    height: 15px;
+    border-radius: 16px;
+    background: var(--theme-slider);
+    transition: all 250ms ease;
+}
+
+#main {
+    background-color: var(--theme);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    align-items: center;
+    border: var(--primary-color) solid;
+    border-radius: 15px;
+    margin: 10px;
+    justify-content: center;
+    align-content: center;
+    width: 105%;
+    height: 105%;
+    position: static;
+}
+
+#title {
+    position: relative;
+    top: -0.25vh;
+    background: var(--theme);
+    font-family: consolas, monospace;
+    color: var(--primary-color);
+    border-radius: 100px;
+    border: solid transparent;
+    margin: 0px 5px 0px 5px;
+    font-size: 1.3em;
+}
+
+.button_ico {
+    height: 80%;
+    width: 80%;
+    fill: var(--theme-text);
+    stroke: none;
+    transition: all 250ms ease-in;
+}
+
+.mode_btn:hover .button_ico {
+    height: 90%;
+    width: 90%;
+    fill: #000;
+    transition: all 250ms ease-in;
+}
+
+.mode_btn_active .button_ico {
+    fill: #000;
+}
+
+.control_active {
+    fill: var(--primary-color);
+    cursor: default;
+    stroke-width: 4px;
+    stroke: var(--primary-color);
+    transition: all 250ms ease-in;
+}
+
+.controls_svg {
+    fill: transparent;
+    stroke: var(--primary-color);
+    stroke-width: 4px;
+    transition: all 250ms ease-in;
+    cursor: pointer;
+}
+
+.controls_svg:hover {
+    fill: var(--primary-color);
+    transition: all 250ms ease-in;
+}
+
+.color_btns {
+    margin: 0.25vh;
+    border-radius: 50%;
+    width: 3vh;
+    height: 3vh;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    /*visibility: hidden;
+    display: none;*/
+    border: none;
+    animation: all 500ms ease-out;
+}
+
+#color_pallete {
+    background-color: #666666;
+    width: 3.75vh;
+    height: 3.75vh;
+    min-width: 37.5px;
+    min-height: 37.5px;
+    border-radius: 50px;
+    margin-left: 0.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    transition: all 500ms ease-in-out;
+    justify-items: center;
+    visibility: hidden;
+}
+
+#theme_button {
+    margin: 0.25vh;
+    border-radius: 50%;
+    border: solid #ffffff;
+    /*background-color: var(--theme-light);*/
+    width: 3vh;
+    height: 3vh;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+#color_button {
+    margin: 0.25vh;
+    display: grid;
+    border-radius: 50%;
+    border: solid #878787;
+    background-color: #878787;
+    width: 3vh;
+    height: 3vh;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    visibility: visible;
+    justify-content: center;
+    align-content: center;
+}
+
+#color_pallete:hover {
+    width: fit-content;
+}
+
+#red_button {
+    background-color: var(--red);
+}
+
+#pink_button {
+    background-color: var(--pink);
+}
+
+#blue_button {
+    background-color: var(--blue);
+}
+
+#green_button {
+    background-color: var(--green);
+}
+
+#yellow_button {
+    background-color: var(--yellow);
+}
+
+#orange_button {
+    background-color: var(--orange);
+}
+
+.toggle_button {
+    position: relative;
+    display:inline-block;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    min-width: 45px;
+    min-height: 30px;
+    max-width: 60px;
+}
+
+.toggle_button input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .44s;
+    border-radius: 50px;
+}
+
+.toggle_slider:before {
+    position:absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .toggle_slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .toggle_slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.toggle_slider:before {
+    border-radius: 50%;
+}
+
+#sweep_div {
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    transition: all .5s ease;
+    margin-top: 10px;
+    justify-content: center;
+}
