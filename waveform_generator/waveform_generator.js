@@ -338,10 +338,20 @@ document.getElementById("startButton").addEventListener("click", ()=>{
         var sweep_from_val = sweep_from.value;
         var sweep_to_val = sweep_to.value;
         var duration_val = sweep_duration.value;
-        playing = true;
-        sweep_gen(active_mode, sweep_from_val, sweep_to_val, duration_val);
-        play_svg.classList.replace("controls_svg", "control_active");
-        pause_svg.classList.replace("control_active", "controls_svg");
+        if (sweep_from_val=="" | sweep_to_val=="" | duration_val=="") {
+            alert("Please fill all the input fields...!");
+        } else {
+            if (sweep_from_val>20000 | sweep_from_val==0 | sweep_to_val>20000 | sweep_to_val==0) {
+                alert("Plase enter values from 1 - 20000 for frequency...!");
+            } else if (duration_val==0 | duration_val>60) {
+                alert("Duration must be from 1 to 60");
+            } else {
+                playing = true;
+                sweep_gen(active_mode, sweep_from_val, sweep_to_val, duration_val);
+                play_svg.classList.replace("controls_svg", "control_active");
+                pause_svg.classList.replace("control_active", "controls_svg");
+            }
+        }
     } else {
         generate(active_mode);
         playing = true;
