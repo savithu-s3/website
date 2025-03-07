@@ -179,9 +179,14 @@ body {
     background: none;
     text-align: center;
     font-family: consolas, monospace;
-    cursor: default;
+    cursor: text;
     font-size: 0.9em;
-    color: var(--theme-dark-text);
+    color: var(--theme-text);
+}
+
+.sweep_input:focus-visible {
+    border: solid var(--primary-color);
+    outline: none;
 }
 
 #frequency_slider {
